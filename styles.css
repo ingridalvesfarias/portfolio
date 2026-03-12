@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe ui', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.cabecalho {
+    background-color: #f0f0f0;
+    padding: 20px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.secao {
+    padding: 100px 0;
+    padding-left: 15px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin: 10px;
+    color: #882020;
+    ;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+a {
+    font-size: 1.1rem;
+    color: #0c0c0c;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #882020;
+    transition: color 0.3s ease;
+}
+
+.computador-animado {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+}
+
+.principal {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    min-height: 70vh;
+    padding-top: 50px;
+}
+
+.principal h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.principal h2 span {
+    color: #882020;
+}
+
+.principal p {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #882020;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.botao-curriculo {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #882020;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.titulo-secao {
+    font-size: 42px;
+    margin: 100px 0 50px 0;
+    position: relative;
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 100px;
+    height: 4px;
+    background-color: #882020;
+}
+
+.grade-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-projeto {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.img-projeto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.info-projeto {
+    padding: 10px;
+}
+
+.info-projeto h4 {
+    margin-bottom: 10px;
+    color: #882020;
+}
+
+.info-projeto p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.info-projeto a {
+    color: #882020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.img-sobre {
+    height: 400px;
+    border-radius: 10px;
+}
+
+.conteudo-sobre h2 {
+    margin-bottom: 30px;
+}
+
+.conteudo-sobre p {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tag-habilidades {
+    background-color: rgba(116, 25, 25, 0.1);
+    color: #882020;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.botoes-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.botao-contato {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    min-width: 160px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.email {
+    background-color: #EA4335;
+}
+
+.linkedin {
+    background-color: #0077B5;
+}
+
+.github {
+    background-color: #333;
+}
+
+footer {
+    padding: 20px 5%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.efeito-cursor {
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+}
+
+.efeito-cursor:hover {
+    transform: translateY(-5px);
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(142, 12, 12, 0.8);
+    z-index: 99;
+    transform: translate(-50%, -50%);
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-left: 0;
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .principal {
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 40px 20px; 
+        gap: 20px; 
+        position: relative; 
+    }
+
+    .conteudo-principal {
+        max-width: 100%;
+        margin-bottom: 0;
+        z-index: 1; 
+        position: relative;
+    }
+
+    .principal h2 {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    .computador-animado {
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, 10%); 
+        width: auto;
+        height: auto;
+        display: block;
+        z-index: 0; 
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .img-sobre {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .grade-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .botoes-contato {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botao-contato {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .titulo-secao {
+        font-size: 32px;
+        margin: 50px 0 30px 0;
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { 
+        font-size: 1.8rem; 
+    }
+    
+    .principal h2 { 
+        font-size: 1.8rem; 
+    }
+
+    .computador-animado { 
+        width: 80%;
+    }
+}
+
+/* Estilo para a barra de rolagem no Chrome, Safari e Edge */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #882020;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #661818; 
+}
+
+/* Estilo para o Firefox */
+* {
+    scrollbar-width: thin; 
+    scrollbar-color: #882020 #f0f0f0;
+}
+
+/* Variáveis padrão (modo claro) */
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #333333;
+  --cor-botao: #007bff;
+}
+
+/* Variáveis para modo escuro */
+.dark-mode {
+  --cor-fundo: #121212;
+  --cor-texto: #ffffff;
+  --cor-botao: #ff9800;
+}
+
+/* Aplicar as variáveis nos elementos */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: all 0.3s ease; /* Efeito suave na troca */
+}
+
+.botao-tema {
+  background-color: var(--cor-botao);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

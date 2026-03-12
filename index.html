@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/spiderman-favicon.png" type="favicon">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio | Ingrid Farias</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Portfólio</h1>
+        <nav>
+            <a href="#Home" style="--i:1" class="active">Home</a>
+            <a href="#Projetos" style="--i:2">Projetos</a>
+            <a href="#Sobre" style="--i:3">Sobre</a>
+            <a href="#Contato" style="--i:4">Contato</a>
+        </nav>
+    </header>
+
+    <button class="botao-tema" id="botaoTema">Modo Escuro</button>
+
+    <section class="principal" id="Home">
+        <div>
+            <h2>Olá, eu sou <span>Ingrid Farias</span>.</h2>
+            <p>Desenvolvedora criativa e apaixonada por tecnologia.</p>
+            <a class="botao efeito-cursor" href="#Projetos">Ver Projetos</a>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <img src="./img/computador.png" alt="computador animado" class="computador-animado">
+        </div>
+    </section>
+
+    <section class="secao" id="Projetos">
+        <h3 class="titulo-secao">Projetos</h3>
+
+        <div class="grade-projetos">
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/ajudante-tcc.png" alt="projeto ajudante tcc homem-aranha">
+                <div class="info-projeto">
+                    <h4>Ajudante TCC do Homem-Aranha</h4>
+                    <p>
+                        Um projeto web para auxiliar estudantes na elaboração de seus Trabalhos de Conclusão de Curso
+                        (TCC), com funcionalidades de ajuste de ortografia, pesquisa de temas e geração de textos — tudo
+                        com cara do Homem-Aranha! Este aplicativo foi desenvolvido para simplificar tarefas comuns na
+                        elaboração de TCCs, utilizando a API da OpenAI para processar textos de forma inteligente. O
+                        design temático homenageia o Homem-Aranha, trazendo identidade visual divertida e funcional.
+                    </p>
+                    <a href="https://ajudante-tcc-spidey.vercel.app" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/tutor-ia.png" alt="projeto tutor IA">
+                <div class="info-projeto">
+                    <h4>SpeakFlow - Seu Tutor de Inglês Pessoal</h4>
+                    <p>
+                        O SpeakFlow é uma aplicação web interativa projetada para ajudar brasileiros a praticarem inglês
+                        de forma natural. Utilizando tecnologias de ponta em Inteligência Artificial, o projeto permite
+                        que você fale em voz alta, receba correções gramaticais em tempo real e ouça a pronúncia correta
+                        da IA. Reconhecimento de Voz: Captura sua fala em inglês ou português através do microfone do
+                        navegador. Tutor Inteligente (PT-BR): A IA entende quando você fala português, traduz para o
+                        inglês e
+                        corrige erros gramaticais específicos.
+                    <p>
+                        <a href="https://tutor-ia-fawn.vercel.app" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/gerador-css-ia.png" alt="projeto css gerador com IA">
+                <div class="info-projeto">
+                    <h4>CSS Gerador com IA </h4>
+                    <p>
+                        O CSS Gerador com IA é uma ferramenta que transforma descrições textuais em código CSS funcional
+                        e exibe um preview em tempo real do elemento estilizado. Basta descrever o que você imagina
+                        (como "bola pulando rosa") e a IA cuidará do resto! Insira uma descrição textual do elemento que
+                        deseja criar no campo de entrada (ex: "bola pulando rosa"). Clique no botão "Gerar Código". O
+                        sistema enviará a descrição para a API do Groq, que retornará o código CSS correspondente.
+                        Visualize o código gerado na seção "Código" e o resultado final na seção "Preview".
+                    </p>
+                    <a href=" https://gerador-ia-wheat.vercel.app" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/previsao-ia.png" alt="projeto previsão do tempo com IA">
+                <div class="info-projeto">
+                    <h4>Previsão do Tempo com IA</h4>
+                    <p>
+                        Projeto web que combina dados de clima em tempo real com inteligência artificial para sugerir
+                        roupas e atividades com base na temperatura, umidade e condições meteorológicas da cidade
+                        pesquisada. O objetivo é facilitar o dia a dia das pessoas, oferecendo não só informações sobre
+                        o clima, mas também recomendações personalizadas usando IA. Além disso, conta com reconhecimento
+                        de voz para buscar cidades de forma prática!
+                    </p>
+                    <a href="https://projeto-previsao-do-tempo-ia.vercel.app/" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/conversor-de-moedas.png" alt="projeto conversor de moedas">
+                <div class="info-projeto">
+                    <h4>Conversor de Moedas</h4>
+                    <p>
+                        Reconhecimento de voz apenas em português brasileiro (pt-BR)
+                        Tradução para diversos idiomas-alvo via API MyMemory Translated,
+                        Entrada por voz ou texto manual,
+                        Exibição da tradução em texto,
+                        Interface responsiva (compatível com web), Entrada de valor em Real Brasileiro,
+                        Conversão instantânea para 4 moedas internacionais,
+                        Atualização dinâmica dos resultados na tela,
+                        Interface responsiva e intuitiva,
+                        Tratamento básico de valores inválidos (ex: caracteres não numéricos).
+                    </p>
+                    <a href="https://ingridalvesfarias.github.io/convert-money/" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+            <div class="card-projeto efeito-cursor">
+                <img class="img-projeto" src="./img/tradutor-ia.png" alt="projeto tradutor IA">
+                <div class="info-projeto">
+                    <h4>Tradutor com IA e Reconhecimento de Voz</h4>
+                    <p>
+                        Este projeto é um tradutor que combina reconhecimento de voz exclusivo em português brasileiro
+                        (pt-BR) para captura de entrada oral e utiliza a API MyMemory Translated para realizar traduções
+                        precisas para múltiplos idiomas-alvo. Facilita a comunicação de falantes de português com
+                        pessoas de outras línguas, com saída em texto. Reconhecimento de voz apenas em português
+                        brasileiro (pt-BR),
+                        Tradução para diversos idiomas-alvo via API MyMemory Translated,
+                        Entrada por voz ou texto manual,
+                        Exibição da tradução em texto,
+                        Interface responsiva (compatível com web).
+                    </p>
+                    <a href="https://ingridalvesfarias.github.io/tradutor-ia/" target="_blank">Ver Projeto →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="secao" id="Sobre">
+        <h2 class="titulo-secao">Sobre Mim</h2>
+
+        <div class="sobre">
+            <img class="img-sobre" src="./img/ingrid-foto.jpeg" alt="foto de perfil da desenvolvedora ingrid farias">
+
+            <div class="conteudo-sobre">
+                <h2>Desenvolvedora apaixonada por tecnologia.</h2>
+                <p>
+                    Olá, me chamo Ingrid Farias, estudante do último ano de Filosofia e apaixonada por tecnologia, em
+                    transição de
+                    carreira para Front-End. Atualmente, foco meu desenvolvimento em HTML, CSS e JavaScript. Minha
+                    graduação em Filosofia está fortalecendo minha visão analítica, comunicação clara e resolução de
+                    problemas. Experiências como Auxiliar de Sala aprimoraram minha organização, colaboração e trabalho
+                    em equipe – habilidades essenciais para o ambiente de desenvolvimento de software.
+                </p>
+
+                <p>
+                    Atualmente, estou aprendendo e criando projetos com HTML, CSS e JavaScript, além de iniciar o
+                    aprendizado de
+                    React e TypeScript.
+                </p>
+
+                <p>
+                    Estou em busca de uma oportunidades para estágio, projetos e vagas júnior no mercado de
+                    desenvolvimento web, onde eu possa
+                    aplicar meus conhecimentos e contribuir para o desenvolvimento de soluções digitais inovadoras.
+                </p>
+
+                <div class="habilidades">
+                    <span class="tag-habilidades efeito-cursor">HTML</span>
+                    <span class="tag-habilidades efeito-cursor">CSS</span>
+                    <span class="tag-habilidades efeito-cursor">JavaScript</span>
+                    <span class="tag-habilidades efeito-cursor">React</span>
+                    <span class="tag-habilidades efeito-cursor">Git</span>
+                    <span class="tag-habilidades efeito-cursor">Github</span>
+                    <span class="tag-habilidades efeito-cursor">TypeScript</span>
+                </div>
+                <br>
+                <a href="" download class="botao-curriculo efeito-cursor" target="_blank">Baixar Currículo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao" id="Contato">
+        <h2 class="titulo-secao">Contato</h2>
+
+        <div class="botoes-contato">
+            <a href="https://w.app/7r6apb" target="_blank" class="botao-contato whatsapp efeito-cursor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path
+                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                </svg>
+                <span>Whatsapp</span>
+            </a>
+
+            <a href="mailto:ingridkookfarias@gmail.com" target="_blank" class="botao-contato email efeito-cursor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                </svg>
+                <span>Email</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ingridalvesfarias/" target="_blank"
+                class="botao-contato linkedin efeito-cursor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-linkedin" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                </svg>
+                <span>Linkedin</span>
+            </a>
+
+            <a href="https://github.com/ingridalvesfarias" target="_blank" class="botao-contato github efeito-cursor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                </svg>
+                <span>GitHub</span>
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Copyright © 2026 by ❤️ Ingrid Farias | All Rights Reserved.</p>
+    </footer>
+
+    <div class="cursor"></div>
+
+</body>
+
+<script src="scripts.js"></script>
+
+</html>
