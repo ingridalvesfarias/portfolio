@@ -1,24 +1,16 @@
 const botaoTema = document.getElementById('botaoTema');
-const corpo = document.body;
+const body = document.body;
 
-// Verificar se o usuário já tem uma preferência salva
-if (localStorage.getItem('tema') === 'escuro') {
-  corpo.classList.add('dark-mode');
-  botaoTema.textContent = 'Modo Claro';
-}
-
-// Ação do botão
 botaoTema.addEventListener('click', () => {
-  corpo.classList.toggle('dark-mode');
-  
-  // Salvar a preferência do usuário
-  if (corpo.classList.contains('dark-mode')) {
-    localStorage.setItem('tema', 'escuro');
-    botaoTema.textContent = 'Modo Claro';
-  } else {
-    localStorage.setItem('tema', 'claro');
-    botaoTema.textContent = 'Modo Escuro';
-  }
+    // Alterna a classe dark-mode no body
+    body.classList.toggle('dark-mode');
+    
+    // Altera o texto do botão conforme o modo
+    if (body.classList.contains('dark-mode')) {
+        botaoTema.textContent = 'Modo Claro';
+    } else {
+        botaoTema.textContent = 'Modo Escuro';
+    }
 });
 
 // Efeito do mouse personalizado 
