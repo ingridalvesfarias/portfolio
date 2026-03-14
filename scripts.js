@@ -2,7 +2,7 @@ const botaoTema = document.getElementById('botaoTema');
 const body = document.body;
 
 botaoTema.addEventListener('click', () => {
-    // Alterna a classe dark-mode no body
+    // Alterna a class dark-mode no body
     body.classList.toggle('dark-mode');
     
     // Altera o texto do botão conforme o modo
