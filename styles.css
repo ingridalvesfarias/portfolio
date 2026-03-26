@@ -46,6 +46,7 @@ nav {
     justify-content: center;
     margin-left: 100px;
     margin-top: -10px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -68,6 +69,20 @@ header a:hover {
     position: absolute;
     left: 50%;
     top: 30%;
+    transform: translateX(-50%);
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .principal {
@@ -137,6 +152,7 @@ header a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+    padding-right: 15px;
 }
 
 .card-projeto {
@@ -352,7 +368,7 @@ footer {
     .computador-animado {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 25%;
         transform: translate(-50%, 10%);
         width: auto;
         height: auto;
@@ -408,7 +424,8 @@ footer {
 
     .computador-animado {
         width: 80%;
-        margin-top: 100px;
+        margin-top: 125px;
+        margin-left: -55px;
     }
 
     .link-codigo {
