@@ -1,16 +1,35 @@
 const botaoTema = document.getElementById('botaoTema');
+const iconeTema = document.getElementById('iconeTema');
 const body = document.body;
 
+// Função para atualizar o ícone baseado no tema
+function atualizarIcone() {
+    if (body.classList.contains('dark-mode')) {
+        // Se estiver no dark mode, mostra o SOL para voltar ao claro
+        iconeTema.className = 'fa-regular fa-sun'; 
+    } else {
+        // Se estiver no light mode, mostra a LUA para ir ao escuro
+        iconeTema.className = 'fa-regular fa-moon';
+    }
+}
+
+// Verifica se já tinha preferência salva
+if (localStorage.getItem('tema-preferido') === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+// Inicializa o ícone correto
+atualizarIcone();
+
 botaoTema.addEventListener('click', () => {
-    // Alterna a class dark-mode no body
     body.classList.toggle('dark-mode');
     
-    // Altera o texto do botão conforme o modo
-    if (body.classList.contains('dark-mode')) {
-        botaoTema.textContent = 'Modo Claro';
-    } else {
-        botaoTema.textContent = 'Modo Escuro';
-    }
+    // Salva a escolha
+    const modoAtivo = body.classList.contains('dark-mode');
+    localStorage.setItem('tema-preferido', modoAtivo ? 'dark' : 'light');
+    
+    // Troca o ícone
+    atualizarIcone();
 });
 
 // Efeito do mouse personalizado 
