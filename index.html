@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./img/spiderman-favicon.png" type="favicon">
     <link rel="stylesheet" href="styles.css">
     <title>Portfólio | Ingrid Farias</title>
@@ -15,17 +12,40 @@
 <body>
     <header class="cabecalho">
         <h1>Portfólio</h1>
-        <nav>
+        <nav id="navPrincipal">
             <a href="#Home" style="--i:1" class="active">Home</a>
             <a href="#Projetos" style="--i:2">Projetos</a>
             <a href="#Sobre" style="--i:3">Sobre</a>
             <a href="#Contato" style="--i:4">Contato</a>
         </nav>
-    </header>
 
-    <button class="botao-tema" id="botaoTema">
-        <i id="iconeTema" class="fa-regular fa-moon"></i>
-    </button>
+        <div class="acoes-cabecalho">
+            <button class="botao-tema" id="botaoTema" aria-label="Alternar modo de cor">
+                <svg id="iconeSol" class="icone-tema" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="12" y1="1.5" x2="12" y2="4"></line>
+                    <line x1="12" y1="20" x2="12" y2="22.5"></line>
+                    <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
+                    <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
+                    <line x1="1.5" y1="12" x2="4" y2="12"></line>
+                    <line x1="20" y1="12" x2="22.5" y2="12"></line>
+                    <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
+                    <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
+                </svg>
+                <svg id="iconeLua" class="icone-tema" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                    <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"></path>
+                </svg>
+            </button>
+
+            <button class="botao-hamburguer" id="botaoHamburguer" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
     <section class="principal" id="Home">
         <div>
@@ -44,128 +64,208 @@
     <section class="secao" id="Projetos">
         <h3 class="titulo-secao">Projetos</h3>
 
-        <div class="grade-projetos">
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/ajudante-tcc.png" alt="projeto ajudante tcc homem-aranha">
-                <div class="info-projeto">
-                    <h4>Ajudante TCC do Homem-Aranha</h4>
-                    <p>
-                        Um projeto web para auxiliar estudantes na elaboração de seus Trabalhos de Conclusão de Curso
-                        (TCC), com funcionalidades de ajuste de ortografia, pesquisa de temas e geração de textos — tudo
-                        com cara do Homem-Aranha! Este aplicativo foi desenvolvido para simplificar tarefas comuns na
-                        elaboração de TCCs, utilizando a API da OpenAI para processar textos de forma inteligente. O
-                        design temático homenageia o Homem-Aranha, trazendo identidade visual divertida e funcional.
-                        Pesquisa de Tema: Gera resumos, referências de artigos ou dados estatísticos sobre o tema
-                        escolhido.
-                    </p>
-                    <a href="https://ajudante-tcc-spidey.vercel.app" target="_blank">Ver Projeto →</a>
-                    <a class="link-codigo" href="https://github.com/ingridalvesfarias/ajudante-spidey-tcc"
-                        target="_blank">Ver Código →</a>
+        <div class="carousel-projetos">
+            <button class="carousel-botao carousel-anterior" id="carrosselAnterior" aria-label="Projeto anterior">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="grade-projetos" id="gradeProjetos">
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/ajudante-tcc.png" alt="projeto ajudante tcc homem-aranha">
+                    <div class="info-projeto">
+                        <h4>Ajudante TCC do Homem-Aranha</h4>
+                        <p>
+                            Plataforma com inteligência artificial para auxiliar estudantes na criação do TCC,
+                            oferecendo recursos de correção de texto, geração de conteúdo e pesquisa de temas.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://ajudante-tcc-spidey.vercel.app" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/ajudante-spidey-tcc"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/tutor-ia.png" alt="projeto tutor IA">
+                    <div class="info-projeto">
+                        <h4>SpeakFlow - Seu Tutor de Inglês Pessoal</h4>
+                        <p>
+                            Tutor interativo de inglês com IA para conversação. Permite falar pelo microfone, receber
+                            feedback de pronúncia e correções instantâneas para otimizar o aprendizado.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://tutor-ia-fawn.vercel.app" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/tutor-ingles-ia"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/gerador-css-ia.png" alt="projeto css gerador com IA">
+                    <div class="info-projeto">
+                        <h4>CSS Gerador com IA</h4>
+                        <p>
+                            Gerador inteligente de estilo que cria códigos CSS prontos a partir de ideias em texto, com
+                            visualização imediata do resultado e do código gerado.
+                        </p>
+                        <div class="links-projeto">
+                            <a href=" https://gerador-ia-wheat.vercel.app" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/gerador-css-ia"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/spiderman-game.png" alt="projeto css gerador com IA">
+                    <div class="info-projeto">
+                        <h4>Spider-Man: Multiverse Battles Game</h4>
+                        <p>
+                            Jogo web temático de combate que reúne diferentes experiências de agilidade inspiradas no
+                            Homem-Aranha, incluindo batalhas aéreas contra o Duende Verde.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://game-spidey.vercel.app/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/game-spidey"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/refri.png" alt="projeto tradutor IA">
+                    <div class="info-projeto">
+                        <h4>Slider de Refrigerantes</h4>
+                        <p>
+                            Componente de slider interativo em Vanilla JS para apresentação de produtos, unindo
+                            transições animadas, cores dinâmicas de fundo e navegação intuitiva.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://refri-dev.netlify.app/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/refri" target="_blank">Ver
+                                Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/gym-ia.png" alt="projeto css gerador com IA">
+                    <div class="info-projeto">
+                        <h4>GymAI - Seu Personal Trainer com IA</h4>
+                        <p>
+                            Assistente fitness inteligente que analisa seus dados corporais e metas para criar treinos e
+                            planejamentos alimentares personalizados em instantes.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://projeto-fitness-two.vercel.app/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/projeto-gym"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/previsao-ia.png" alt="projeto previsão do tempo com IA">
+                    <div class="info-projeto">
+                        <h4>Previsão do Tempo com IA</h4>
+                        <p>
+                            Plataforma com inteligência artificial que analisa o clima em tempo real para sugerir roupas
+                            e atividades ideais, com suporte a busca por reconhecimento de voz.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://projeto-previsao-do-tempo-ia.vercel.app/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/projeto-previsao-IA"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/fp-cars.png" alt="projeto tradutor IA">
+                    <div class="info-projeto">
+                        <h4>FP Sellection - Vitrine Premium de Carros</h4>
+                        <p>
+                            Página web interativa desenvolvida com tecnologias front-end para exibir carros de luxo como
+                            Porsche, Ferrari e Lamborghini com transições e animações suaves.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://projeto-fp-psi.vercel.app/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/projeto-fp"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/cv-tech.png" alt="projeto conversor de moedas">
+                    <div class="info-projeto">
+                        <h4>Gerador CV Profissional com IA</h4>
+                        <p>
+                            Gerador de currículos tech com inteligência artificial focado em aprovação em sistemas ATS,
+                            combinando um editor minimalista com consultoria de carreira.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://gerador-cv-privado.vercel.app/" target="_blank">Ver Projeto
+                                →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/gerador-curriculo-IA"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/conversor-de-moedas.png" alt="projeto conversor de moedas">
+                    <div class="info-projeto">
+                        <h4>Conversor de Moedas</h4>
+                        <p>
+                            Aplicação web simples e intuitiva para conversão do Real para quatro moedas internacionais
+                            em tempo real, com interface responsiva e validação de dados.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://ingridalvesfarias.github.io/convert-money/" target="_blank">Ver Projeto
+                                →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/convert-money"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-projeto efeito-cursor">
+                    <img class="img-projeto" src="./img/tradutor-ia.png" alt="projeto tradutor IA">
+                    <div class="info-projeto">
+                        <h4>Tradutor com IA e Reconhecimento de Voz</h4>
+                        <p>
+                            Ferramenta de tradução com suporte a reconhecimento de voz em português (pt-BR) que utiliza
+                            a API MyMemory para traduzir falas e textos para múltiplos idiomas.
+                        </p>
+                        <div class="links-projeto">
+                            <a href="https://ingridalvesfarias.github.io/tradutor-ia/" target="_blank">Ver Projeto →</a>
+                            <a class="link-codigo" href="https://github.com/ingridalvesfarias/tradutor-ia"
+                                target="_blank">Ver Código →</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/tutor-ia.png" alt="projeto tutor IA">
-                <div class="info-projeto">
-                    <h4>SpeakFlow - Seu Tutor de Inglês Pessoal</h4>
-                    <p>
-                        O SpeakFlow é uma aplicação web interativa projetada para ajudar brasileiros a praticarem inglês
-                        de forma natural. Utilizando tecnologias de ponta em Inteligência Artificial, o projeto permite
-                        que você fale em voz alta, receba correções gramaticais em tempo real e ouça a pronúncia correta
-                        da IA. Reconhecimento de Voz: Captura sua fala em inglês ou português através do microfone do
-                        navegador. Tutor Inteligente (PT-BR): A IA entende quando você fala português, traduz para o
-                        inglês e corrige erros gramaticais específicos. Dêem uma conferida.
-                    <p>
-                        <a href="https://tutor-ia-fawn.vercel.app" target="_blank">Ver Projeto →</a>
-                        <a class="link-codigo" href="https://github.com/ingridalvesfarias/tutor-ingles-ia"
-                            target="_blank">Ver Código →</a>
-                </div>
-            </div>
-
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/gerador-css-ia.png" alt="projeto css gerador com IA">
-                <div class="info-projeto">
-                    <h4>CSS Gerador com IA </h4>
-                    <p>
-                        O CSS Gerador com IA é uma ferramenta que transforma descrições textuais em código CSS funcional
-                        e exibe um preview em tempo real do elemento estilizado. Basta descrever o que você imagina e a
-                        IA cuidará do resto! Insira uma descrição textual do elemento que
-                        deseja criar no campo de entrada (ex: "bola pulando rosa"). Clique no botão "Gerar Código". O
-                        sistema enviará a descrição para a API do Groq, que retornará o código CSS correspondente.
-                        Visualize o código gerado na seção "Código" e o resultado final na seção "Preview". Dêem uma
-                        conferida.
-                    </p>
-                    <a href=" https://gerador-ia-wheat.vercel.app" target="_blank">Ver Projeto →</a>
-                    <a class="link-codigo" href="https://github.com/ingridalvesfarias/gerador-css-ia"
-                        target="_blank">Ver Código →</a>
-                </div>
-            </div>
-
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/previsao-ia.png" alt="projeto previsão do tempo com IA">
-                <div class="info-projeto">
-                    <h4>Previsão do Tempo com IA</h4>
-                    <p>
-                        Projeto web que combina dados de clima em tempo real com inteligência artificial para sugerir
-                        roupas e atividades com base na temperatura, umidade e condições meteorológicas da cidade
-                        pesquisada. O objetivo é facilitar o dia a dia das pessoas, oferecendo não só informações sobre
-                        o clima, mas também recomendações personalizadas usando IA. Além disso, conta com reconhecimento
-                        de voz para buscar cidades de forma prática! Busca de previsão do tempo por nome de cidade
-                        (escrita ou voz). Sugestões de roupas e informações do clima (via IA).
-                    </p>
-                    <a href="https://projeto-previsao-do-tempo-ia.vercel.app/" target="_blank">Ver Projeto →</a>
-                    <a class="link-codigo" href="https://github.com/ingridalvesfarias/projeto-previsao-IA"
-                        target="_blank">Ver Código →</a>
-                </div>
-            </div>
-
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/conversor-de-moedas.png" alt="projeto conversor de moedas">
-                <div class="info-projeto">
-                    <h4>Conversor de Moedas</h4>
-                    <p>
-                        Um conversor de moedas simples e funcional, desenvolvido com HTML, CSS e foco em JavaScript para
-                        a lógica de conversão e manipulação do DOM. O projeto permite converter valores em Real
-                        Brasileiro (BRL) para Dólar Americano (USD), Euro (EUR), Won Sul-Coreano (KRW) e Libra Esterlina
-                        (GBP). Entrada de valor em Real Brasileiro,
-                        Conversão instantânea para 4 moedas internacionais,
-                        Atualização dinâmica dos resultados na tela,
-                        Interface responsiva e intuitiva,
-                        Tratamento básico de valores inválidos (ex: caracteres não numéricos).
-                    </p>
-                    <a href="https://ingridalvesfarias.github.io/convert-money/" target="_blank">Ver Projeto →</a>
-                    <a class="link-codigo" href="https://github.com/ingridalvesfarias/convert-money" target="_blank">Ver
-                        Código →</a>
-                </div>
-            </div>
-
-            <div class="card-projeto efeito-cursor">
-                <img class="img-projeto" src="./img/tradutor-ia.png" alt="projeto tradutor IA">
-                <div class="info-projeto">
-                    <h4>Tradutor com IA e Reconhecimento de Voz</h4>
-                    <p>
-                        Este projeto é um tradutor que combina reconhecimento de voz exclusivo em português brasileiro
-                        (pt-BR) para captura de entrada oral e utiliza a API MyMemory Translated para realizar traduções
-                        precisas para múltiplos idiomas-alvo. Facilita a comunicação de falantes de português com
-                        pessoas de outras línguas, com saída em texto. Reconhecimento de voz apenas em português
-                        brasileiro (pt-BR),
-                        Tradução para diversos idiomas-alvo via API MyMemory Translated,
-                        Entrada por voz ou texto manual,
-                        Exibição da tradução em texto,
-                        Interface responsiva (compatível com web).
-                    </p>
-                    <a href="https://ingridalvesfarias.github.io/tradutor-ia/" target="_blank">Ver Projeto →</a>
-                    <a class="link-codigo" href="https://github.com/ingridalvesfarias/tradutor-ia" target="_blank">Ver
-                        Código →</a>
-                </div>
-            </div>
-
-            <a href="https://github.com/ingridalvesfarias?tab=repositories" target="_blank" rel="noopener noreferrer"
-                class="github-link">
-                Ver meus projetos no GitHub →
-            </a>
-
+            <button class="carousel-botao carousel-proximo" id="carrosselProximo" aria-label="Próximo projeto">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
         </div>
+
+        <a href="https://github.com/ingridalvesfarias?tab=repositories" target="_blank" rel="noopener noreferrer"
+            class="github-link">
+            Ver meus projetos no GitHub →
+        </a>
+
     </section>
 
     <section class="secao" id="Sobre">

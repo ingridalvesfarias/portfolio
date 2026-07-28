@@ -1,65 +1,85 @@
+/* ============ TEMA CLARO / ESCURO ============ */
 const botaoTema = document.getElementById('botaoTema');
-const iconeTema = document.getElementById('iconeTema');
+const iconeSol = document.getElementById('iconeSol');
+const iconeLua = document.getElementById('iconeLua');
 const body = document.body;
 
-// Função para atualizar o ícone baseado no tema
+// Mostra o ícone correto de acordo com o tema atual
 function atualizarIcone() {
-    if (body.classList.contains('dark-mode')) {
-        // Se estiver no dark mode, mostra o SOL para voltar ao claro
-        iconeTema.className = 'fa-regular fa-sun'; 
-    } else {
-        // Se estiver no light mode, mostra a LUA para ir ao escuro
-        iconeTema.className = 'fa-regular fa-moon';
-    }
+    const escuro = body.classList.contains('dark-mode');
+    iconeSol.style.display = escuro ? 'none' : 'block';
+    iconeLua.style.display = escuro ? 'block' : 'none';
 }
 
-// Verifica se já tinha preferência salva
+// Verifica se já existe preferência salva e aplica antes de renderizar o ícone
 if (localStorage.getItem('tema-preferido') === 'dark') {
     body.classList.add('dark-mode');
 }
 
-// Inicializa o ícone correto
+// Define o ícone correto já na carga da página
 atualizarIcone();
 
+// Alterna o tema ao clicar no botão
 botaoTema.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    
-    // Salva a escolha
-    const modoAtivo = body.classList.contains('dark-mode');
-    localStorage.setItem('tema-preferido', modoAtivo ? 'dark' : 'light');
-    
-    // Troca o ícone
+    const escuro = body.classList.toggle('dark-mode');
+    localStorage.setItem('tema-preferido', escuro ? 'dark' : 'light');
     atualizarIcone();
 });
 
-// Efeito do mouse personalizado 
-const cursor = document.querySelector('.cursor')
+/* ============ MENU HAMBÚRGUER ============ */
+const botaoHamburguer = document.getElementById('botaoHamburguer');
+const navPrincipal = document.getElementById('navPrincipal');
 
-    document.addEventListener('mousemove', function (info) {
-        cursor.style.left = info.clientX + 'px'
-        cursor.style.top = info.clientY + 'px'
-    })
+botaoHamburguer.addEventListener('click', () => {
+    const aberto = navPrincipal.classList.toggle('nav-aberto');
+    botaoHamburguer.classList.toggle('ativo');
+    botaoHamburguer.setAttribute('aria-expanded', aberto);
+});
 
-// Voltar ao topo (Home)
+navPrincipal.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+        navPrincipal.classList.remove('nav-aberto');
+        botaoHamburguer.classList.remove('ativo');
+        botaoHamburguer.setAttribute('aria-expanded', 'false');
+    });
+});
+
+/* ============ CARROSSEL DE PROJETOS ============ */
+const gradeProjetos = document.getElementById('gradeProjetos');
+const carrosselAnterior = document.getElementById('carrosselAnterior');
+const carrosselProximo = document.getElementById('carrosselProximo');
+
+function rolarCarrossel(direcao) {
+    const card = gradeProjetos.querySelector('.card-projeto');
+    if (!card) return;
+    const gap = parseInt(window.getComputedStyle(gradeProjetos).gap) || 20;
+    const distancia = card.offsetWidth + gap;
+    gradeProjetos.scrollBy({ left: direcao * distancia, behavior: 'smooth' });
+}
+
+carrosselAnterior.addEventListener('click', () => rolarCarrossel(-1));
+carrosselProximo.addEventListener('click', () => rolarCarrossel(1));
+
+/* ============ CURSOR PERSONALIZADO ============ */
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', (info) => {
+    cursor.style.left = info.clientX + 'px';
+    cursor.style.top = info.clientY + 'px';
+});
+
+/* ============ NAVEGAÇÃO ENTRE SEÇÕES ============ */
 function backToHome() {
-  const inicioPagina = document.getElementById('Home');
-  inicioPagina.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('Home').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Mostrar seção Projetos
 function showProject() {
-  const secao = document.getElementById('Projetos');
-  secao.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('Projetos').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Mostrar seção Sobre Mim
 function showAbout() {
-  const secao = document.getElementById('Sobre');
-  secao.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('Sobre').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Mostrar seção Contato
 function showContact() {
-  const secao = document.getElementById('Contato');
-  secao.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('Contato').scrollIntoView({ behavior: 'smooth' });
 }

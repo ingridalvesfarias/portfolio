@@ -41,14 +41,55 @@ header {
 nav {
     display: flex;
     list-style: none;
-    gap: 50px;
+    gap: 40px;
     padding: 20px;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
-    margin-top: -10px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.acoes-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.botao-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #882020;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.dark-mode .botao-hamburguer span {
+    background-color: var(--accent-color);
+}
+
+.botao-hamburguer.ativo span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.botao-hamburguer.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.botao-hamburguer.ativo span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 a {
@@ -153,56 +194,120 @@ header a:hover {
     background-color: #882020;
 }
 
+.carousel-projetos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 .grade-projetos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding-right: 15px;
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 4px;
+    scrollbar-width: none;
+    min-width: 0;
+}
+
+.grade-projetos::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-botao {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background-color: #882020;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.carousel-botao:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode .carousel-botao {
+    background-color: #ff333d;
+    box-shadow: 0 0 15px rgba(255, 51, 61, 0.5);
 }
 
 .card-projeto {
+    flex: 0 0 calc((100% - 2 * 22px) / 3);
+    scroll-snap-align: start;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 18px;
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .img-projeto {
     width: 100%;
-    height: 200px;
+    height: 175px;
     object-fit: cover;
-    margin-bottom: 20px;
+    border-radius: 6px;
+    margin-bottom: 14px;
 }
 
 .info-projeto {
-    padding: 10px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .info-projeto h4 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #882020;
+    font-size: 1rem;
 }
 
 .info-projeto p {
     color: #666;
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    line-clamp: 6;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.links-projeto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
 }
 
 .info-projeto a {
     color: #882020;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .link-codigo {
     color: #882020;
     text-decoration: none;
     font-weight: bold;
-    position: relative;
-    left: 100px;
 }
 
 .github-link {
@@ -330,20 +435,32 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
+        text-align: left;
+        position: relative;
     }
 
     nav {
-        margin-left: 0;
-        margin-top: 15px;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin: 15px 0 0 0;
+        padding: 15px 0 0 0;
+        text-align: center;
+        border-top: 1px solid rgba(136, 32, 32, 0.15);
     }
 
-    .botao-tema {
-        margin-top: 60px;
+    .dark-mode nav {
+        border-top: 1px solid rgba(255, 51, 61, 0.15);
+    }
+
+    nav.nav-aberto {
+        display: flex;
+    }
+
+    .botao-hamburguer {
+        display: flex;
     }
 
     .principal {
@@ -392,9 +509,18 @@ footer {
         max-width: 100%;
     }
 
-    .grade-projetos {
-        grid-template-columns: 1fr;
-        padding: 10px 20px;
+    .carousel-projetos {
+        gap: 8px;
+        padding: 0 5px;
+    }
+
+    .card-projeto {
+        flex: 0 0 100%;
+    }
+
+    .carousel-botao {
+        width: 34px;
+        height: 34px;
     }
 
     .botoes-contato {
@@ -429,13 +555,8 @@ footer {
 
     .computador-animado {
         width: 80%;
-        margin-top: 125px;
+        margin-top: 60px;
         margin-left: -62px;
-    }
-
-    .link-codigo {
-        position: relative;
-        left: 40px;
     }
 }
 
@@ -553,14 +674,11 @@ body.dark-mode {
 
 /* Estilo Base do Botão */
 .botao-tema {
-    position: fixed;
-    top: 90px;
-    right: 25px;
-    z-index: 1000;
+    flex-shrink: 0;
 
     /* Formato Circular */
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -575,8 +693,9 @@ body.dark-mode {
 }
 
 /* Tamanho do ícone dentro do botão */
-.botao-tema i {
-    font-size: 1.5rem;
+.botao-tema .icone-tema {
+    width: 20px;
+    height: 20px;
 }
 
 /* Estilo do Botão quando está no MODO ESCURO */
