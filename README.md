@@ -6,10 +6,9 @@ Bem-vindo ao meu portfólio! Sou uma desenvolvedora Front-End em transição de 
 Olá, me chamo *Ingrid Farias*. Sou estudante do último ano de Filosofia e essa base acadêmica me proporciona uma visão analítica aguçada, excelente comunicação e habilidades na resolução de problemas complexos. Atualmente, foco meu desenvolvimento em **HTML, CSS e JavaScript**, expandindo meus conhecimentos para **React e TypeScript**.
 
 ## 🛠️ Tecnologias e Habilidades
-* *Linguagens:* HTML5, CSS3, JavaScript (ES6+), TypeScript.
+* *Linguagens:* HTML5, CSS3, JavaScript (ES6+).
 * *Frameworks/Bibliotecas:* React.
 * *Ferramentas:* Git, GitHub, VS Code.
-* *Diferenciais:* Integração de APIs (OpenAI, Groq), Reconhecimento de Voz, Design Responsivo.
 
 ## 💡 Recursos do Portfólio
 Este projeto foi desenvolvido com foco em acessibilidade e experiência do usuário:
