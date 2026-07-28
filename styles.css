@@ -434,25 +434,35 @@ footer {
 /* --- RESPONSIVIDADE PARA CELULARES --- */
 
 @media (max-width: 768px) {
+    .cabecalho {
+        padding: 12px 3%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
     header {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         text-align: left;
         position: relative;
+        justify-content: space-between;
+        align-items: center;
     }
 
     nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin: 15px 0 0 0;
-        padding: 15px 0 0 0;
-        text-align: center;
-        border-top: 1px solid rgba(136, 32, 32, 0.15);
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+        border-top: none;
     }
 
     .dark-mode nav {
-        border-top: 1px solid rgba(255, 51, 61, 0.15);
+        border-top: none;
     }
 
     nav.nav-aberto {
@@ -460,7 +470,21 @@ footer {
     }
 
     .botao-hamburguer {
-        display: flex;
+        display: none;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .botao-tema {
+        width: 34px;
+        height: 34px;
+    }
+
+    .botao-tema .icone-tema {
+        width: 18px;
+        height: 18px;
     }
 
     .principal {
@@ -545,8 +569,30 @@ footer {
 }
 
 @media (max-width: 430px) {
+    .cabecalho {
+        padding: 10px 2%;
+    }
+
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.15rem;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .botao-tema {
+        width: 30px;
+        height: 30px;
+    }
+
+    .botao-tema .icone-tema {
+        width: 14px;
+        height: 14px;
     }
 
     .principal h2 {
@@ -555,7 +601,7 @@ footer {
 
     .computador-animado {
         width: 80%;
-        margin-top: 60px;
+        margin-top: 30px;
         margin-left: -62px;
     }
 }
